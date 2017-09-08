@@ -49,6 +49,10 @@ docker login
 docker images | grep -e '^hygieia.*' | awk '{print "docker push pravsingh/"$1;}' | sh
 ```
 # Creating DB & user in mongodb
+
+The image "pravsingh/hygieia-mongodb" already has DB & user already created with DB Name=db, User Name=db, Password=dbpass.
+If you want to create something different, here are the steps:
+
 ```bash
 docker run -d -p 27017:27017 --name mongodb -v mongo:/data/db pravsingh/hygieia-mongodb  mongod --smallfiles
 docker exec -it mongodb mongo admin
@@ -59,3 +63,4 @@ use db
 db.createUser({user: "db", pwd: "dbpass", roles: [{role: "readWrite", db: "dashboard"}]})
 exit
 ```
+

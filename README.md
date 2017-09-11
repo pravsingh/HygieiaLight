@@ -18,6 +18,8 @@ As of now I have created images and uploaded to my dockerhub account.
 You can find them at [my Hygieia images](https://cloud.docker.com/swarm/pravsingh/repository/list?name=hygieia&namespace=pravsingh&page=1)
 
 # Running Hygieia
+The docker-compose.yml file used my published images and hence you don't have to close and build original Hygieia images from the source code. Below will start the Hygieia API, UI, MongoDB and other connectors needed.
+
 docker-compose up
 
 should launch UI at http://localhost:8088
